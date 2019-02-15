@@ -34107,6 +34107,30 @@ __webpack_require__(80);
 
         form.children('.alert-danger').remove();
 
+
+
+        form.find('[required]').each(function() {
+          if ( $(this).val().length < 1 ) {
+            $(this).addClass('is-invalid');
+            return false;
+          }
+          else {
+            $(this).removeClass('is-invalid');
+          }
+        });
+
+        form.find('[type="email"]').each(function() {
+          if ( ! validEmail.test( $(this).val() ) ) {
+            $(this).addClass('is-invalid');
+            return false;
+          }
+          else {
+            $(this).removeClass('is-invalid');
+          }
+        });
+
+
+
         if ( email.length ) {
           if ( email.val().length < 1 || ! validEmail.test( email.val() ) ) {
             email.addClass('is-invalid');
@@ -34147,6 +34171,14 @@ __webpack_require__(80);
 
         return false;
       });
+
+
+      form.find('[required], [type="email"]').each(function() {
+        $(this).on('focus', function() {
+          $(this).removeClass('is-invalid');
+        });
+      });
+
 
       email.on('focus', function() {
         $(this).removeClass('is-invalid');
@@ -34583,6 +34615,13 @@ __webpack_require__(80);
         options['expired-callback'] = function() {
           $(options.enable).attr('disabled', 'true');
         }
+
+        $(this).closest('form').on('submit', function(e) {
+          if ( $(this).find( options.enable ).attr('disabled') === 'true' ) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        });
       }
 
       grecaptcha.render( $(this)[0], options);

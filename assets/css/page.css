@@ -1602,7 +1602,7 @@ textarea.form-control {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1.9;
   color: #fff;
   background-color: rgba(60, 212, 88, 0.9);
@@ -1704,7 +1704,7 @@ textarea.form-control {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1.9;
   color: #fff;
   background-color: rgba(255, 73, 84, 0.9);
@@ -4455,7 +4455,7 @@ a.close.disabled {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   word-wrap: break-word;
   opacity: 0; }
   .tooltip.show {
@@ -4540,7 +4540,7 @@ a.close.disabled {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: padding-box;
@@ -16346,7 +16346,8 @@ button:focus {
   .btn-label.btn-xs {
     padding-left: 43px; }
     .btn-label.btn-xs label {
-      width: 27px; }
+      width: 27px;
+      padding-top: 1px; }
 
 .btn-square {
   padding-left: 5px;
@@ -19556,6 +19557,9 @@ body:not(.body-scrolled) .topbar.d-flex ~ .navbar {
             flex-grow: 1; }
   .navbar-scrolled .navbar {
     top: 0; }
+  .navbar .container > .btn,
+  .navbar .container-fluid > .btn {
+    flex-shrink: 0; }
 
 .navbar-offset-0 {
   top: 0; }
